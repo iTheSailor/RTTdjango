@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "rttdjango"
+version = "0.1.0"
+description = "J.Peterson's RepoToText in Django"
+authors = ["Ibrahim Salir <112807438+iTheSailor@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+PyGithub = "^2.2.0"
+beautifulsoup4 = "^4.12.3"
+Django = "^5.0.3"
+django-cors-headers = "^4.3.1"
+djangorestframework = "^3.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
