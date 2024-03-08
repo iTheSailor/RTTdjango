@@ -1,0 +1,48 @@
+{% extends 'Parser/index.html' %}
+{% load static %}  
+{% block content %}
+<head>
+    <title>Repo Scraper</title>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+</head>
+        <form id="scrapeForm" class="inputContainer">
+            <input id="repoUrl" type="text" placeholder="Enter Github repo URL" class="inputArea" />
+            <input id="docUrl" type="text" placeholder="Enter documentation URL (optional)" class="inputArea" />
+            
+            <div class="fileSelectionContainer">
+                <div>
+                    <input type="radio" name="fileSelection" value="all" id="allFiles" checked />
+                    <label for="allFiles">All Files</label>
+                </div>
+                <div>
+                    <input type="radio" name="fileSelection" value="select" id="selectFiles" />
+                    <label for="selectFiles">Select File Types</label>
+                </div>
+            </div>
+
+            <div id="fileTypesContainer" class="fileTypesContainer" style="display: none;">
+                {% for fileType in FILE_TYPES %}
+                <div>
+                    <input type="checkbox" name="selectedFileTypes" value="{{ fileType }}" id="fileType{{ loop.index }}" />
+                    <label for="fileType{{ loop.index }}">{{ fileType }}</label>
+                </div>
+                {% endfor %}
+                <div>
+                    <input id="customFileType" type="text" placeholder="Enter new file type" class="smallInputArea" />
+                    <button type="button" onclick="addFileType()" class="addButton">Add</button>
+                </div>
+            </div>
+
+            <button type="submit" class="transformButton">Submit</button>
+        </form>
+        
+        <button onclick="copyText()" class="copyButton">Copy Text</button>
+        
+        <div class="outputContainer">
+            <textarea id="response" readonly class="outputArea"></textarea>
+        </div>
+        <script src="{% static 'js/scrape.js' %}"></script>
+{% endblock %}
+
