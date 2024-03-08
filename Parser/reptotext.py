@@ -14,7 +14,7 @@ class GithubRepoScraper:
         if selected_file_types is None:
             selected_file_types = []
         self.github_api_key = os.getenv("GITHUB_API_KEY")
-        print(f"Using GitHub API Key: {self.github_api_key}")  # Debugging line, remove if necessary
+        
         self.repo_name = repo_name
         self.doc_link = doc_link
         self.selected_file_types = selected_file_types
