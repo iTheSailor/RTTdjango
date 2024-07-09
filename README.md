@@ -1,5 +1,8 @@
 # RTTdjango
- RepoToText full django
+
+RepoToText full django
+The brilliant RepoToText project (https://github.com/JeremiahPetersen/RepoToText) build in Django without the need for Docker
+
 
 ## Steps to Reproduce 
 
